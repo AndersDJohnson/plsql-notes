@@ -1,5 +1,5 @@
 # plsql-notes
-Notes on PL/SQL.
+PL/SQL notes.
 
 Originally from: https://gist.github.com/AndersDJohnson/6253340
 
