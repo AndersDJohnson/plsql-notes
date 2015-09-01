@@ -1,6 +1,8 @@
 # plsql-notes
 Notes on PL/SQL.
 
+Originally from: https://gist.github.com/AndersDJohnson/6253340
+
 Set current schema:
 
 ```sql
