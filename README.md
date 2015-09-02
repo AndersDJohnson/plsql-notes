@@ -3,14 +3,12 @@ PL/SQL notes.
 
 Originally from https://gist.github.com/AndersDJohnson/6253340/.
 
-Set current schema:
-
+## Set Current Schema
 ```sql
 ALTER SESSION SET CURRENT_SCHEMA=PRODUCTS;
 ```
 
-Output:
-
+## Output
 ```sql
 SET SERVEROUTPUT ON;
 BEGIN
@@ -19,20 +17,33 @@ END;
 /
 ```
 
-All tables:
+## All tables
 ```sql
 SELECT * FROM all_tables;
 ```
 
-All columns on all non-system-owned tables:
+## All columns non-system
 ```sql
 SELECT * FROM all_tab_columns WHERE owner NOT IN ('SYS', 'SYSTEM');
 ```
 
-Sources (e.g. for stored procedure or function):
+## Sources
+e.g. for stored procedure or function
 ```sql
 select TEXT
 from all_source where lower(name) = 'get_product_prices_overlap'
 order by line
 ;
+```
+
+## Catch exceptions
+e.g. when adding a column that already exists:
+```sql
+declare
+    column_exists exception;
+    pragma exception_init (column_exists , -01430);
+begin
+    execute immediate 'ALTER TABLE ORDERS.ORDER_ITEMS ADD (EVENT_CUSTOMER_JUNS_NUMBER  VARCHAR2(50))';
+    exception when column_exists then null;
+end;
 ```
