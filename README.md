@@ -3,7 +3,7 @@ PL/SQL notes.
 
 Originally from https://gist.github.com/AndersDJohnson/6253340/.
 
-## Set Current Schema
+## Set current schema
 ```sql
 ALTER SESSION SET CURRENT_SCHEMA=PRODUCTS;
 ```
