@@ -48,3 +48,7 @@ BEGIN
         WHEN column_exists THEN null;
 END;
 ```
+
+## Drop If Exists
+
+http://stackoverflow.com/a/1801453/851135
