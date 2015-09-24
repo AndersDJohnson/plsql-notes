@@ -1,4 +1,4 @@
-# pl-sql-notes
+# plsql-notes
 PL/SQL notes.
 
 Originally from https://gist.github.com/AndersDJohnson/6253340/.
