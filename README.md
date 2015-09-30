@@ -43,7 +43,7 @@ DECLARE
     column_exists exception;
     pragma exception_init (column_exists , -01430); -- ORA-XXXXX e.g. ORA-01430: column being added already exists in table
 BEGIN
-    EXECUTE IMMEDIATE 'ALTER TABLE ORDERS.ORDER_ITEMS ADD (EVENT_CUSTOMER_JUNS_NUMBER  VARCHAR2(50))';
+    EXECUTE IMMEDIATE 'ALTER TABLE ORDERS.ORDER_ITEMS ADD (EVENT_CUSTOMER_JUNS_NUMBER VARCHAR2(50))';
     EXCEPTION
         WHEN column_exists THEN null;
 END;
