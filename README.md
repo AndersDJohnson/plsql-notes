@@ -24,7 +24,9 @@ SELECT * FROM all_tables;
 
 ## All columns non-system
 ```sql
-SELECT * FROM all_tab_columns WHERE owner NOT IN ('SYS', 'SYSTEM');
+SELECT * FROM all_tab_columns WHERE owner NOT IN ('SYS', 'SYSTEM')
+-- AND lower(table_name) = 'product_refcode_master'
+ORDER BY owner, table_name, column_name;
 ```
 
 ## Sources
