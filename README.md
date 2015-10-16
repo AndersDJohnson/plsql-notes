@@ -54,3 +54,8 @@ END;
 ## Drop If Exists
 
 http://stackoverflow.com/a/1801453/851135
+
+## Row Timestamps
+```
+http://docs.oracle.com/cd/B19306_01/server.102/b14200/functions142.htm
+```
