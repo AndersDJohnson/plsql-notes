@@ -3,6 +3,14 @@ PL/SQL notes.
 
 Originally from https://gist.github.com/AndersDJohnson/6253340/.
 
+## Group by concat
+```sql
+SELECT LISTAGG(myCol, ', ') WITHIN GROUP (ORDER BY myCol) myCols
+/* ... */
+GROUP BY
+/* ... */
+```
+
 ## Set current schema
 ```sql
 ALTER SESSION SET CURRENT_SCHEMA=PRODUCTS;
