@@ -67,3 +67,9 @@ http://stackoverflow.com/a/1801453/851135
 ```
 http://docs.oracle.com/cd/B19306_01/server.102/b14200/functions142.htm
 ```
+
+## Character Encoding
+```
+SELECT * FROM NLS_DATABASE_PARAMETERS
+WHERE PARAMETER IN ('NLS_CHARACTERSET', 'NLS_NCHAR_CHARACTERSET');
+```
