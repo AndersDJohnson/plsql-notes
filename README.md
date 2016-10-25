@@ -38,11 +38,19 @@ ORDER BY owner, table_name, column_name;
 ```
 
 ## Sources
-e.g. for stored procedure or function
+
+### Stored Procedure or Function
 ```sql
 select TEXT
 from all_source where lower(name) = 'my_proc'
 order by line
+;
+```
+
+### View
+```sql
+select TEXT
+from all_views where lower(view_name) = 'my_view'
 ;
 ```
 
