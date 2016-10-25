@@ -33,7 +33,7 @@ SELECT * FROM all_tables;
 ## All columns non-system
 ```sql
 SELECT * FROM all_tab_columns WHERE owner NOT IN ('SYS', 'SYSTEM')
--- AND lower(table_name) = 'product_refcode_master'
+-- AND lower(table_name) = 'my_table'
 ORDER BY owner, table_name, column_name;
 ```
 
@@ -41,7 +41,7 @@ ORDER BY owner, table_name, column_name;
 e.g. for stored procedure or function
 ```sql
 select TEXT
-from all_source where lower(name) = 'get_product_prices_overlap'
+from all_source where lower(name) = 'my_proc'
 order by line
 ;
 ```
@@ -53,7 +53,7 @@ DECLARE
     column_exists exception;
     pragma exception_init (column_exists , -01430); -- ORA-XXXXX e.g. ORA-01430: column being added already exists in table
 BEGIN
-    EXECUTE IMMEDIATE 'ALTER TABLE ORDERS.ORDER_ITEMS ADD (EVENT_CUSTOMER_JUNS_NUMBER VARCHAR2(50))';
+    EXECUTE IMMEDIATE 'ALTER TABLE MY_SCHEMA.MY_TABLE ADD (MY_COLUMN VARCHAR2(50))';
     EXCEPTION
         WHEN column_exists THEN null;
 END;
