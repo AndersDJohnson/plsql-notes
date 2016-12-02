@@ -39,10 +39,10 @@ ORDER BY owner, table_name, column_name;
 
 ## Sources
 
-### Stored Procedure or Function
+### Stored Procedure, Function, or Package
 ```sql
 select TEXT
-from all_source where lower(name) = 'my_proc'
+from all_source where lower(name) = '%my_proc%'
 order by line
 ;
 ```
